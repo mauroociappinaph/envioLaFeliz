@@ -2,16 +2,16 @@ import { create } from 'zustand';
 
 // Define el tipo del estado
 interface AppState {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
+  location: { lat: number; lng: number };
+  setLocation: (lat: number, lng: number) => void;
+  resetLocation: () => void;
 }
 
-// Crea el store
+// Crea el store con la ubicación inicial en Mar del Plata
 const useStore = create<AppState>((set) => ({
-  count: 0, // Estado inicial
-  increment: () => set((state) => ({ count: state.count + 1 })),
-  decrement: () => set((state) => ({ count: state.count - 1 })),
+  location: { lat: -34.6037, lng: -58.3816 },
+  setLocation: (lat, lng) => set({ location: { lat, lng } }),
+  resetLocation: () => set({ location: { lat: -34.6037, lng: -58.3816 } }),
 }));
 
 export default useStore;

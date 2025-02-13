@@ -1,11 +1,15 @@
 import React from 'react';
-
 import './App.css';
+import HomePage from './components/HomePage.tsx';
+
 
 function App() {
+
+
+
   return (
     <div className="App">
-      <h1>Envíos La Feliz</h1>
+<HomePage />
     </div>
   );
 }
